@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<tittlE><h1>SIGN IN</h1></tittle>
+<link rel = "stylesheet" href = "C:\Users\bandlangwenya\Bandla\BandlaRegistration css\BandlaRegistration.css">
+</head>
+<body>
+
+<div>
+ <form action= "profile.html"      >
+<h1>LOGIN</h1>
+<p>
+
+<label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"
+		placeholder="username" required><br>
+<label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"
+		placeholder="password" required><br>
+<input type ="submit" onclick="saveData()" value = "LOGIN"><input type = "reset"><br>
+<a href="C:\Users\bandlangwenya\Bandla\BandlaRegestration html\BandlaRegistrationPart2.html">Not Registerd?,click here to register</a>
+</p>
+</form>
+</div>
+</body>
+    <script>
+let firstname =localStorage.getItem('firstname')?localStorage.getItem('firstname'):''
+console.log(firstname);
+let lastname =localStorage.getItem('lastname')?localStorage.getItem('lastname'):''
+console.log(lastname);
+let email =localStorage.getItem('email')?localStorage.getItem('email'):''
+console.log(email);
+let sex =localStorage.getItem('sex')?localStorage.getItem('sex'):''
+console.log(sex);
+let username =localStorage.getItem('username')?localStorage.getItem('username'):''
+console.log(username);
+if(username!='')
+{
+  alert('go to profile');
+  window.location.href = "profile.html";
+}
+function saveData() {
+  let username,pwd;
+       
+       username = document.getElementById("username").value;
+       pwd = document.getElementById("pwd").value;
+ 
+   
+  let user_records = new Array
+  user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+
+          if(user_records.some((v)=>{return v.username ==username && v.pwd==pwd}))
+          {
+              alert("Login Successful");
+              let current_user = user_records.filter((v)=>{return v.username==username && v.pwd ==pwd})[0]
+              localStorage.setItem('firstname',current_user.firstname);
+              localStorage.setItem('lastname',current_user.lastname);
+              localStorage.setItem('username',current_user.username);
+              localStorage.setItem('email',current_user.email);
+              localStorage.setItem('sex',current_user.sex);
+              window.location.href= "profile.html"
+              
+          }else
+          {
+              alert("Login failed");
+          }
+      
+  }
+
+    </script>
+</html>

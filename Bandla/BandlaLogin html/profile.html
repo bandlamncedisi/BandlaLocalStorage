@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<tittlE><h1>profile</h1>  
+</tittle>
+<link rel = "stylesheet" href = "C:\Users\bandlangwenya\Bandla\BandlaRegistration css\BandlaRegistration.css">
+</head>
+<body>
+
+<div>
+
+<h1>profile</h1>
+<input type="submit" onclick="Logout()" value="Logout" style="float: right;">
+<hr>
+<h2>welcome</h2>
+<h4>Name: 
+    <script>
+         document.write(localStorage.getItem('firstname')) + "  "+
+         document.write(localStorage.getItem('lastname')) ;
+    </script><br>
+    Username:
+    <script>
+        document.write(localStorage.getItem('username'));
+    </script><br>
+    Email:
+    <script>
+        document.write(localStorage.getItem('email'));
+    </script><br>
+    Sex:
+    <script>
+        document.write(localStorage.getItem('sex'));
+     </script><br>
+</h4>
+
+</body>
+    <script>
+let firstname =localStorage.getItem('firstname')?localStorage.getItem('firstname'):''
+console.log(firstname);
+let lastname =localStorage.getItem('lastname')?localStorage.getItem('lastname'):''
+console.log(lastname);
+let email =localStorage.getItem('email')?localStorage.getItem('email'):''
+console.log(email);
+let sex =localStorage.getItem('sex')?localStorage.getItem('sex'):''
+console.log(sex);
+let username =localStorage.getItem('username')?localStorage.getItem('username'):''
+console.log(username);
+if(username=='')
+{
+  alert('wrong username or pass,try again');
+  window.location.href = "BandlaLogin.html";
+}
+function Logout()
+{
+    localStorage.removeItem('firstname');
+    localStorage.removeItem('lastname');
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
+    localStorage.removeItem('sex');
+    window.location.href= "Bandlalogin.html";
+}
+
+    </script>
+</html>

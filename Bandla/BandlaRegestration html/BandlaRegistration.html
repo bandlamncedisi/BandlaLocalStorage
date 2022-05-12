@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<tittlE><h1>Registation</h1></tittle>
+<link rel = "stylesheet" href = "C:\Users\bandlangwenya\Bandla\BandlaRegistration css\BandlaRegistration.css">
+</head>
+<body>
+
+<div>
+ <form action= "#">
+<h1>REGISTER</h1>
+<p>
+<label for = "firstname">first name: </label><br>
+ 	<input type = "text" id = "firstname" name ="firstname"
+		placeholder="FirstName" required><br>
+<label for = "lastname">last name:  </label><br>
+ 	<input type = "text" id = "lastname" name ="lastname"
+		placeholder="LastName" required><br>
+<label for = "email">email:     </label><br>
+ 	<input type = "email" id = "email" name ="email"
+		placeholder="email@bandla.com" required><br>
+<input type ="radio" id="sex" name = "sex" value = "female">Female<br>
+<input type ="radio" id="sex" name = "sex" value = "male">Male<br>
+<label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"
+		placeholder="username" required><br>
+<label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"
+		placeholder="password" required><br>
+<input type ="submit" onclick = "saveData()"   value = "Register"><input type = "reset"><br>
+<a href="C:\Users\bandlangwenya\Bandla\BandlaLogin html\BandlaLogin.html">Aready Regisred?,click here to Login</a>
+</p>
+</form>
+</div>
+</body>
+	<script>
+function saveData() {
+	
+
+		let firstname,lastname,email,sex,username,pwd;
+		firstname = document.getElementById("firstname").value;
+		lastname = document.getElementById("lastname").value;
+		email = document.getElementById("email").value;
+		sex = document.getElementById("sex").value;
+		username = document.getElementById("username").value;
+		pwd = document.getElementById("pwd").value;
+
+		localStorage.setItem("firstname",firstname);
+		localStorage.setItem("lastname",lastname);
+		localStorage.setItem("email",email);
+		localStorage.setItem("sex",sex);
+		localStorage.setItem("username",username);
+		localStorage.setItem("firstname",firstname);
+}
+	</script>
+</html>
+
